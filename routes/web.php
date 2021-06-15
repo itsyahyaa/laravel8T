@@ -128,4 +128,7 @@ Route::post("savedb",[SaveDb::class,'addData']);
 
 Route::get("remove",[DeleteDb::class,'list']);
 Route::get("delete/{id}",[DeleteDb::class,'delete']);
+
+
 Route::get("edit/{id}",[DeleteDb::class,'showData']);
+Route::post("update",[DeleteDb::class,'addData']);
