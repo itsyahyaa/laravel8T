@@ -1,10 +1,19 @@
-<<<<<<< HEAD
+
 <?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\USersControllers;
 use App\Http\Controllers\HtmlForm;
+use App\Http\Controllers\UserDatabase;
+use App\Http\Controllers\UserDatabasesearch;
+use App\Http\Controllers\HttpController;
+use App\Http\Controllers\HttpRequestMethod;
+use App\Http\Controllers\AddMember;
+use App\Http\Controllers\Upload;
+use App\Http\Controllers\ShowList;
+use App\Http\Controllers\SaveDb;
+use App\Http\Controllers\DeleteDB;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,31 +60,72 @@ Route::get("user1",[UsersControllers::class,'viewLoad']);
 
 // get method
 
-// Route::post("htmlform",[HtmlForm::class,'getData']);
-// Route::view("login","htmlform");
+//Route::post("htmlform",[HtmlForm::class,'getData']);
+//  Route::view("login","htmlform");
 
 
 
-Route::view("hello","hello");
-Route::view("user","user");
-Route::view("htmlform","htmlform");
-=======
-<?php
+// Route::view("hello","hello");
+// Route::view("user","user");
+// Route::view("htmlform","htmlform");
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('hello'); //this is where to show which page should be index
+Route::group(['middleware'=>['protectedPage']],function(){
+    Route::view('user','user');
 });
->>>>>>> 3f190e78bd2dad5d020c572f639b4469353c827e
+
+
+Route::get("Database",[UserDatabase::class,'index']);
+
+Route::get("search",[UserDatabasesearch::class,'fetchData']);
+
+
+Route::get("Http",[HttpController::class,'index']);
+
+//Route::post("login",[HttpRequestMethod::class,'index']);
+Route::post("log",[HtmlForm::class,'getData']);
+Route::view("login1","login");
+Route::view("inner","inner");
+
+// **** **** ///
+Route::get('/login', function () {
+    if(session()->has('user'))
+    {
+        return redirect('inner');
+    }
+    return view('login1');
+});
+
+
+Route::get('/logout', function () {
+    if(session()->has('user'))
+    {
+        session()->pull('user');
+    }
+    return redirect('login1');
+});
+
+
+Route::view("add","add");
+Route::post("Addmember",[AddMember::class,'add']);
+
+
+
+Route::view("upload","upload");
+Route::post("file",[Upload::class,'index']);
+
+
+Route::view("profile","profile");
+
+
+Route::view("list","list");
+Route::get("list",[ShowList::class,'show']);
+
+
+Route::view("savedb","saveDb");
+Route::post("savedb",[SaveDb::class,'addData']);
+
+
+
+Route::get("remove",[DeleteDb::class,'list']);
+Route::get("delete/{id}",[DeleteDb::class,'delete']);
+Route::get("edit/{id}",[DeleteDb::class,'showData']);
