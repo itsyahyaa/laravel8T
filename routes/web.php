@@ -17,7 +17,7 @@ use App\Http\Controllers\DeleteDB;
 use App\Http\Controllers\M31;
 use App\Http\Controllers\M37;
 use App\Http\Controllers\M38;
-
+use App\Http\Controllers\M39;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -142,3 +142,7 @@ Route::get("m31",[M31::class,'operations']);
 Route::get("m37",[M37::class,'index']);
 
 Route::get("m38",[M38::class,'index']);
+
+
+
+Route::get("m39",[M39::class,'index']);

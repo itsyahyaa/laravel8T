@@ -26,4 +26,10 @@ class Member extends Model
         $this->attributes["address"]=$value." ,INDIA";
     }
 
+    // one to many
+    public function getDevice()
+    {
+        return $this->hasMany('App\Models\Device');
+    }
+
  }
