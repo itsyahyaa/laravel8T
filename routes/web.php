@@ -14,6 +14,7 @@ use App\Http\Controllers\Upload;
 use App\Http\Controllers\ShowList;
 use App\Http\Controllers\SaveDb;
 use App\Http\Controllers\DeleteDB;
+use App\Http\Controllers\M31;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +133,5 @@ Route::get("delete/{id}",[DeleteDb::class,'delete']);
 
 Route::get("edit/{id}",[DeleteDb::class,'showData']);
 Route::post("update",[DeleteDb::class,'addData']);
+
+Route::get("m31",[M31::class,'operations']);
