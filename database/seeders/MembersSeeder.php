@@ -15,7 +15,7 @@ class MembersSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // dummpy data to database
         DB::table('members')->insert([
             'name'=>Str::random(10),
             'email'=>Str::random(10).'@gmail.com',
@@ -23,3 +23,4 @@ class MembersSeeder extends Seeder
         ]);
     }
 }
+ 

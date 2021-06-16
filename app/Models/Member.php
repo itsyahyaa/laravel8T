@@ -9,4 +9,10 @@ class Member extends Model
 {
     use HasFactory;
     public $timestamps=false;
+
+    // function to change first letter of name to capital
+    public function getAddressAttribute($value)
+    {
+        return $value. ', INDIA';
+    }
 }
