@@ -11,8 +11,19 @@ class Member extends Model
     public $timestamps=false;
 
     // function to change first letter of name to capital
-    public function getAddressAttribute($value)
+//     public function getAddressAttribute($value)
+//     {
+//         return $value. ', INDIA';
+//     }
+
+    public function setNameAttribute($value)
     {
-        return $value. ', INDIA';
+        $this->attributes["name"]="Mr ".$value;
     }
-}
+
+    public function setAddressAttribute($value)
+    {
+        $this->attributes["address"]=$value." ,INDIA";
+    }
+
+ }
