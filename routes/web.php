@@ -18,6 +18,7 @@ use App\Http\Controllers\M31;
 use App\Http\Controllers\M37;
 use App\Http\Controllers\M38;
 use App\Http\Controllers\M39;
+use App\Http\Controllers\M40;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -146,3 +147,5 @@ Route::get("m38",[M38::class,'index']);
 
 
 Route::get("m39",[M39::class,'index']);
+
+Route::get("m40",[M40::class,'index']);
