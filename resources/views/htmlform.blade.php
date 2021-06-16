@@ -11,8 +11,8 @@
 {{-- Other Error --}}
 <h1>NO Acess</h1>
 
-<form action="htmlform" method="POST">
-    @csrf
+<form action="htmlform" method="GET">
+    @csrf  
     <input type="text" name="username" placeholder="Enter Your ID"><br>
     <span class="li">
         @error('username'){{$message}}
