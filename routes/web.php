@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -58,3 +59,4 @@ Route::get("user1",[UsersControllers::class,'viewLoad']);
 Route::view("hello","hello");
 Route::view("user","user");
 Route::view("htmlform","htmlform");
+
