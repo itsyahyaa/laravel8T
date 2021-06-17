@@ -23,4 +23,7 @@ Route::get("a47",[A47::class,'index']);
 
 Route::Post("a49",[A47::class,'add']);
 
-Route::Post("a50",[A47::class,'update']);
+Route::put("a50",[A47::class,'update']);
+
+Route::put("a51",[A47::class,'delete']);
+
