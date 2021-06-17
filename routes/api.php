@@ -25,5 +25,5 @@ Route::Post("a49",[A47::class,'add']);
 
 Route::put("a50",[A47::class,'update']);
 
-Route::put("a51",[A47::class,'delete']);
+Route::delete("a51/{id}",[A47::class,'delete']);
 

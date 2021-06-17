@@ -39,5 +39,15 @@ class A47 extends Controller
         }
     }
 
-   
+    function delete(Request $req){
+        $device=Device::find($req->id);
+        $result = $device->delete();
+        if($result){
+            return ["Result"=>"Data has been Deleted"];
+        }
+        else{
+            return ["Result"=>"Data is NOT Deleted"];
+        }
+        // return ["Result"=>"Data is NOT Deleted".$id];
+    }
 }
