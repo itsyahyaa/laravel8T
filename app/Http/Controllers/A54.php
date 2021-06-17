@@ -16,7 +16,7 @@ class A54 extends Controller
     {
         //
         return Member::all();
-         return "APi resources";
+         //return "APi resources";
     }
 
     /**
