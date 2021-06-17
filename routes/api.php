@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get("a47",[A47::class,'index']);
+
+Route::Post("a49",[A47::class,'add']);
+
+Route::Post("a50",[A47::class,'update']);
