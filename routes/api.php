@@ -32,5 +32,4 @@ Route::get("a52/{name}",[A47::class,'search']);
 
 Route::Post("a53",[A47::class,'testData']);
 
-
-
+Route::apiResource("a54",A54::class);
