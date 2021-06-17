@@ -50,4 +50,8 @@ class A47 extends Controller
         }
         // return ["Result"=>"Data is NOT Deleted".$id];
     }
+
+    function search($name){
+        return Device::where("name","like","%".$name."%")->get();
+    }
 }
