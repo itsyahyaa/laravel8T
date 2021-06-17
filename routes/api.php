@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\A47;
+use App\Http\Controllers\A54;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +31,5 @@ Route::delete("a51/{id}",[A47::class,'delete']);
 Route::get("a52/{name}",[A47::class,'search']);
 
 Route::Post("a53",[A47::class,'testData']);
+
+Route::apiResource("a54",A54::class);
