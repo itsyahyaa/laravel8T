@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\A47;
 use App\Http\Controllers\A54;
 use App\Http\Controllers\UsersTableSeeder;
+use App\Http\Controllers\fileController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -37,3 +38,5 @@ Route::apiResource("a54",A54::class);
 
 
 Route::post("login",[UsersTableSeeder::class,'index']);
+
+Route::get("upload",[fileController::class,'upload']);
